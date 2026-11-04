@@ -1,0 +1,30 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="selfshot"
+version="1.0.0"
+displayName="Self Shot (TACZ addon)"
+description='''Игровая механика: кнопка V - анимация от первого лица и выстрел в себя из оружия TACZ.'''
+
+[[dependencies.selfshot]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.selfshot]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.21)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.selfshot]]
+modId="tacz"
+mandatory=true
+versionRange="[1.0,)"
+ordering="AFTER"
+side="BOTH"
