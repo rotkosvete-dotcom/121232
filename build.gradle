@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+}
+
+group = 'com.example.selfshot'
+version = '1.0.0'
+base { archivesName = 'selfshot' }
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
+    // jar TACZ лежит в папке libs/
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+tasks.named('jar') {
+    manifest { attributes 'Implementation-Title': 'selfshot', 'Implementation-Version': project.version }
+    finalizedBy 'reobfJar'
+}
